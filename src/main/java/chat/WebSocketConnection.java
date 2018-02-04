@@ -17,7 +17,6 @@
 package chat;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -108,9 +107,10 @@ public class WebSocketConnection {
 	// Broadcast to all clients the list of active client names
 	private static void broadcastActiveSessions() {
 		// marshal list of active sessions
-		ArrayList<ActiveSession> activeSessions = new ArrayList<ActiveSession>();
+		// ArrayList<ActiveSession> activeSessions = new ArrayList<ActiveSession>();
+		ChatSessions activeSessions = new ChatSessions();
 		for (WebSocketConnection client : connections) {
-			activeSessions.add(new ActiveSession(client.nickname));
+			activeSessions.add(new ChatSession(client.nickname));
 		}
 
 		// broadcast list of active sessions to all clients
