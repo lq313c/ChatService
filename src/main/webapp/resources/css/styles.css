@@ -1,0 +1,9 @@
+#chatInput {
+    width: 410px
+}
+
+#textArea {
+    resize: none;
+    width: 410px;
+    height: 170px;
+}

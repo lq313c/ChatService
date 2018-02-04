@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+    id 'eclipse'
+    id 'war'
+}
+
+repositories {
+    mavenCentral()
+}
+
+war {
+    baseName = 'ChatService'
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/javax.websocket/javax.websocket-api
+	compile group: 'javax.websocket', name: 'javax.websocket-api', version: '1.1'
+
+	// https://mvnrepository.com/artifact/org.apache.tomcat/juli
+	compile group: 'org.apache.tomcat', name: 'juli', version: '6.0.26'
+	
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '1.5.9.RELEASE'
+	
+	// https://mvnrepository.com/artifact/com.google.code.gson/gson
+	compile group: 'com.google.code.gson', name: 'gson', version: '2.7'
+}
+
