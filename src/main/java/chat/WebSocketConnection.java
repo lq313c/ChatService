@@ -56,7 +56,7 @@ public class WebSocketConnection {
 	public void start(Session session) {
 		this.session = session;
 		connections.add(this);
-		String message = String.format("* %s %s", nickname, "has joined.");
+		String message = "has joined the channel.";
 		broadcast(nickname, message);
 		broadcastActiveSessions();
 	}
@@ -64,7 +64,7 @@ public class WebSocketConnection {
 	@OnClose
 	public void end() {
 		connections.remove(this);
-		String message = String.format("* %s %s", nickname, "has disconnected.");
+		String message = "has disconnected from the channel.";
 		broadcast(nickname, message);
 		broadcastActiveSessions();
 	}
